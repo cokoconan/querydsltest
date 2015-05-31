@@ -2,7 +2,8 @@
 
 ####Type-safe Querying using Querydsl
 
--type-safe 란?
+- type-safe 란?
+
     어떠한 오퍼레이션(연산)도 정의되지 않은 결과를 내놓지 않는것, 즉, 예측불가능한 결과를 내지 않는것을 뜻한다.
     예를 들면, 
     1 + 1 = 2 이지만, 1 + "1" 의 연산에 대해서는 결과를 알 수 없다. 
@@ -43,10 +44,11 @@ DSL
 
 
 ---
-
-http://www.slideshare.net/timowestkamper
+<ul>
+<li>http://www.slideshare.net/timowestkamper</li>
 https://github.com/spring-projects/spring-data-book/tree/master/querydsl
 http://aeternum.egloos.com/2954659
 http://www.querydsl.com/static/querydsl/3.6.3/reference/ko-KR/html_single/
 
 참고 동영상 : https://www.youtube.com/watch?v=ho0fQt8v_HA
+</ul>
