@@ -4,13 +4,13 @@
 
 - type-safe 란?
 
-    어떠한 오퍼레이션(연산)도 정의되지 않은 결과를 내놓지 않는것, 즉, 예측불가능한 결과를 내지 않는것을 뜻한다.
-    예를 들면, 
-    1 + 1 = 2 이지만, 1 + "1" 의 연산에 대해서는 결과를 알 수 없다. 
-    Type-Safe하다고 알려진 언어에서는 이를 에러처리를 해주지만, 
-    Type-Safe하지 않은 언어, 예를 들어 자바스크립트같은 언어에서는 이것을 "11" 로 처리한다. 
-    그래서 Javascript는 Type-Safe하다고 하지 않는다.
-    일반적으로, 많이 들었겠지만, c# / java 와 같은 언어들을 일반적으로 type-safe 하다라고 한다.
+                    어떠한 오퍼레이션(연산)도 정의되지 않은 결과를 내놓지 않는것, 즉, 예측불가능한 결과를 내지 않는것을 뜻한다.
+                    예를 들면, 
+                    1 + 1 = 2 이지만, 1 + "1" 의 연산에 대해서는 결과를 알 수 없다. 
+                    Type-Safe하다고 알려진 언어에서는 이를 에러처리를 해주지만, 
+                    Type-Safe하지 않은 언어, 예를 들어 자바스크립트같은 언어에서는 이것을 "11" 로 처리한다. 
+                    그래서 Javascript는 Type-Safe하다고 하지 않는다.
+                    일반적으로, 많이 들었겠지만, c# / java 와 같은 언어들을 일반적으로 type-safe 하다라고 한다.
 
 
 Query 의 문제점?
@@ -44,11 +44,13 @@ DSL
 
 
 ---
+---
+---
 <ul>
 <li>http://www.slideshare.net/timowestkamper</li>
-https://github.com/spring-projects/spring-data-book/tree/master/querydsl
-http://aeternum.egloos.com/2954659
-http://www.querydsl.com/static/querydsl/3.6.3/reference/ko-KR/html_single/
+<li>https://github.com/spring-projects/spring-data-book/tree/master/querydsl</li>
+<li>http://aeternum.egloos.com/2954659</li>
+<li>http://www.querydsl.com/static/querydsl/3.6.3/reference/ko-KR/html_single/</li>
 
-참고 동영상 : https://www.youtube.com/watch?v=ho0fQt8v_HA
+<li>참고 동영상 : https://www.youtube.com/watch?v=ho0fQt8v_HA</li>
 </ul>
