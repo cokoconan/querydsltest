@@ -39,12 +39,12 @@ DSL
 - 다양한 저장소 조회 기능 통합
 
 ####querydsl의 일반 용법
-from: 쿼리 소스를 추가한다. 첫 번째 인자는 메인 소스가 되고, 나머지는 변수로 취급한다.
-where: 쿼리 필터를 추가한다. 가변인자나 and/or 메서드를 이용해서 필터를 추가한다.
-groupBy: 가변인자 형식의 인자를 기준으로 그룹을 추가한다.
-having: Predicate 표현식을 이용해서 "group by" 그룹핑의 필터를 추가한다.
-orderBy: 정렬 표현식을 이용해서 정렬 순서를 지정한다. 숫자나 문자열에 대해서는 asc()나 desc()를 사용하고, OrderSpecifier에 접근하기 위해 다른 비교 표현식을 사용한다.
-limit, offset, restrict: 결과의 페이징을 설정한다. limit은 최대 결과 개수, offset은 결과의 시작 행, restrict는 limit과 offset을 함께 정의한다.
+>from: 쿼리 소스를 추가한다. 첫 번째 인자는 메인 소스가 되고, 나머지는 변수로 취급한다.
+>where: 쿼리 필터를 추가한다. 가변인자나 and/or 메서드를 이용해서 필터를 추가한다.
+>groupBy: 가변인자 형식의 인자를 기준으로 그룹을 추가한다.
+>having: Predicate 표현식을 이용해서 "group by" 그룹핑의 필터를 추가한다.
+>orderBy: 정렬 표현식을 이용해서 정렬 순서를 지정한다. 숫자나 문자열에 대해서는 asc()나 desc()를 사용하고, >OrderSpecifier에 접근하기 위해 다른 비교 표현식을 사용한다.
+>limit, offset, restrict: 결과의 페이징을 설정한다. limit은 최대 결과 개수, offset은 결과의 시작 행, restrict는 >limit과 offset을 함께 정의한다.
 
 
 
