@@ -54,3 +54,4 @@ DSL
 
 <li>참고 동영상 : https://www.youtube.com/watch?v=ho0fQt8v_HA</li>
 </ul>
+https://github.com/querydsl/querydsl/releases/tag/QUERYDSL_4_0_1
