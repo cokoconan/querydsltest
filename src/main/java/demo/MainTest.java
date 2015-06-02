@@ -4,16 +4,17 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.mysema.query.jpa.impl.JPAQuery;
 
 public class MainTest {
 	
+	@Autowired
 	private EntityManagerFactory entityManagerFactory;
-
+/*
 	@Before
 	public void setUp() {
 		entityManagerFactory = Persistence
@@ -25,7 +26,7 @@ public class MainTest {
 		entityManagerFactory.close();
 	}
 
-	
+*/	
 	
 	@Test
 	public void test() {
@@ -37,11 +38,11 @@ public class MainTest {
 		entityManager.getTransaction().commit();
 
 		QCustomer customer = QCustomer.customer;
-		/*JPAQuery query = new JPAQuery(entityManager);
+		JPAQuery query = new JPAQuery(entityManager);
 		List<Customer> list = query.from(customer).list(customer);
 		System.out.println(list);
 
-		entityManager.close();*/
+		entityManager.close();
 	}
 
 }
