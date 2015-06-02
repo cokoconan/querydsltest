@@ -1,8 +1,9 @@
 package demo;
 
-import javax.jdo.annotations.PersistenceCapable;
+import javax.persistence.Entity;
 
-@PersistenceCapable
+
+@Entity
 public class Customer {
 	private String firstName;
 	private String lastName;

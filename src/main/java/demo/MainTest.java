@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MainTest {
+	
 	private EntityManagerFactory entityManagerFactory;
 
 	@Before
@@ -24,6 +25,8 @@ public class MainTest {
 		entityManagerFactory.close();
 	}
 
+	
+	
 	@Test
 	public void test() {
 		EntityManager entityManager = entityManagerFactory
@@ -34,11 +37,11 @@ public class MainTest {
 		entityManager.getTransaction().commit();
 
 		QCustomer customer = QCustomer.customer;
-		JPAQuery query = new JPAQuery(entityManager);
+		/*JPAQuery query = new JPAQuery(entityManager);
 		List<Customer> list = query.from(customer).list(customer);
 		System.out.println(list);
 
-		entityManager.close();
+		entityManager.close();*/
 	}
 
 }
