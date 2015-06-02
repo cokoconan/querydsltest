@@ -1,10 +1,18 @@
 package demo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 
 @Entity
 public class Customer {
+	
+	@Id
+	@Column
+	@GeneratedValue	private int id;
+	
 	private String firstName;
 	private String lastName;
 	
@@ -15,6 +23,8 @@ public class Customer {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
+
+
 
 	public String getFirstName() {
 		return firstName;
@@ -31,5 +41,13 @@ public class Customer {
 	public void setLastName(String ln) {
 		lastName = ln;
 	}
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", firstName=" + firstName
+				+ ", lastName=" + lastName + "]";
+	}
+	
+	
 
 }
