@@ -11,9 +11,12 @@ public class Customer {
 	
 	@Id
 	@Column
-	@GeneratedValue	private int id;
+	@GeneratedValue	
+	private int id;
 	
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
 	
 	public Customer() {

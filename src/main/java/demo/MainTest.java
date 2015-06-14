@@ -6,27 +6,20 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.mysema.query.jpa.impl.JPAQuery;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = DsltestApplication.class)
 public class MainTest {
 	
 	@Autowired
 	private EntityManagerFactory entityManagerFactory;
-/*
-	@Before
-	public void setUp() {
-		entityManagerFactory = Persistence
-				.createEntityManagerFactory("com.mysema.query.jpa");
-	}
 
-	@After
-	public void tearDown() {
-		entityManagerFactory.close();
-	}
-
-*/	
 	
 	@Test
 	public void test() {
