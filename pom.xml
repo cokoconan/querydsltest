@@ -47,7 +47,8 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		
+		<!-- 쿼리dsl 의존성 추가 -->
 		<dependency>
 			<groupId>com.mysema.querydsl</groupId>
 			<artifactId>querydsl-apt</artifactId>
@@ -65,7 +66,7 @@
 			<artifactId>querydsl-core</artifactId>
 			<version>${querydsl.version}</version>
 		</dependency>
-
+		<!-- 쿼리dsl 의존성 추가 -->
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -76,6 +77,11 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>2.10.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -84,6 +90,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<!-- 쿼리dsl 플러그인 추가 -->
 			<plugin>
 				<groupId>com.mysema.maven</groupId>
 				<artifactId>apt-maven-plugin</artifactId>
@@ -100,6 +108,9 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- 쿼리dsl 플러그인 추가 -->
+			
+			
 		</plugins>
 	</build>
 
