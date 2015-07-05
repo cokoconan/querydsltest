@@ -3,6 +3,7 @@ package demo;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 
 import org.junit.Before;
@@ -50,7 +51,6 @@ public class DsltestApplicationTests {
 
 	@Test
 	public void list() {
-		
 		QCustomer qcustomer = QCustomer.customer;
 		JPAQuery query = new JPAQuery(entityManager);
 		List<Customer> list = query.from(qcustomer).list(qcustomer);
@@ -93,9 +93,13 @@ public class DsltestApplicationTests {
 		QCustomer customer = QCustomer.customer;
 		QCompany company = QCompany.company;
 		JPAQuery query = new JPAQuery(entityManager);
-		List<Tuple> list = query.from(customer) .innerJoin(customer.company, company)
+		//List<Tuple> list = 
+		
+		query.from(customer) .innerJoin(customer.companyname, customer)
 	    .list(customer.firstName, customer.lastName, company.address);
-		System.out.println(list);
+		
+		
+		//System.out.println(list);
 		
 	}
 

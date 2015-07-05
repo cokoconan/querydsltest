@@ -24,10 +24,9 @@ public class Company {
 	@Column
 	private String address;
 	
+	 @OneToMany(fetch = FetchType.LAZY, mappedBy = "companyname")
+	 private Set<Customer> customer = new HashSet<Customer>();
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
-    private Set<Customer> customer = new HashSet<Customer>();
-	
 
 	public Company() {
 	}
@@ -73,6 +72,18 @@ public class Company {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+
+
+	public Set<Customer> getCustomer() {
+		return customer;
+	}
+
+
+
+	public void setCustomer(Set<Customer> customer) {
+		this.customer = customer;
 	}
 
 	

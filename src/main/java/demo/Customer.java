@@ -23,12 +23,10 @@ public class Customer {
 	@Column
 	private String companyname;
 	
-	
-	@ManyToOne
-    @JoinColumn(name = "companyname")
+
+
+    @ManyToOne(optional = false)
     private Company company;
-	
-	
 	
 	public Customer() {
 	}
@@ -86,6 +84,16 @@ public class Customer {
 		return "Customer [id=" + id + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", companyname=" + companyname
 				+ "]";
+	}
+
+
+	public Company getCompany() {
+		return company;
+	}
+
+
+	public void setCompany(Company company) {
+		this.company = company;
 	}
 
 	
