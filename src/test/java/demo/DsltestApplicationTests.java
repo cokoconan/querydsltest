@@ -3,7 +3,6 @@ package demo;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 
 import org.junit.Before;
@@ -14,6 +13,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.mysema.query.Tuple;
+import com.mysema.query.jpa.EclipseLinkTemplates;
 import com.mysema.query.jpa.impl.JPAQuery;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -93,13 +93,12 @@ public class DsltestApplicationTests {
 		QCustomer customer = QCustomer.customer;
 		QCompany company = QCompany.company;
 		JPAQuery query = new JPAQuery(entityManager);
-		//List<Tuple> list = 
+		//JPQLQuery query = null;//new HibernateQuery(session);//(entityManager);
+		List<Tuple> list = query.from(customer).innerJoin(company).on(customer.companyname.eq(company.companyname))
+	    .list(customer.firstName, customer.lastName);
 		
-		query.from(customer) .innerJoin(customer.companyname, customer)
-	    .list(customer.firstName, customer.lastName, company.address);
 		
-		
-		//System.out.println(list);
+		System.out.println(list);
 		
 	}
 

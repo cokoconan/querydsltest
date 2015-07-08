@@ -86,7 +86,7 @@ public class Customer {
 				+ "]";
 	}
 
-
+/*
 	public Company getCompany() {
 		return company;
 	}
@@ -95,7 +95,7 @@ public class Customer {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
-
+*/
 	
 	
 
