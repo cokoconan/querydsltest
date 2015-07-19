@@ -13,7 +13,6 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.mysema.query.Tuple;
-import com.mysema.query.jpa.EclipseLinkTemplates;
 import com.mysema.query.jpa.impl.JPAQuery;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,18 +32,21 @@ public class DsltestApplicationTests {
 	
 	@Before
     public void init() {
-        customerrepo.save(new Customer("aaaa", "bbbb","hihi"));
-        customerrepo.save(new Customer("bbbb", "cccc","hihi"));
-        customerrepo.save(new Customer("bbbb", "cccc","one"));
-        customerrepo.save(new Customer("bbbb", "cccc","one"));
-        customerrepo.save(new Customer("bbbb", "cccc","two"));
-        customerrepo.save(new Customer("dddd", "eeee","two"));
-        customerrepo.save(new Customer("ffff", "qqqq","two"));
+        Company com1 = new Company("hihi","서울시 ");
+        Company com2 = new Company("one","대전광역시 ");
+        Company com3 = new Company("two","인천광역시 ");
+        companyrepo.save(com1);
+        companyrepo.save(com2);
+        companyrepo.save(com3);
         
-        companyrepo.save(new Company("hihi","서울시 "));
-        companyrepo.save(new Company("one","대전광역시 "));
-        companyrepo.save(new Company("two","인천광역시  "));
         
+        customerrepo.save(new Customer("aaaa", "bbbb",com1));
+        customerrepo.save(new Customer("bbbb", "cccc",com1));
+        customerrepo.save(new Customer("bbbb", "cccc",com1));
+        customerrepo.save(new Customer("bbbb", "cccc",com2));
+        customerrepo.save(new Customer("bbbb", "cccc",com2));
+        customerrepo.save(new Customer("dddd", "eeee",com3));
+        customerrepo.save(new Customer("ffff", "qqqq",com3));
         
     }
 	
@@ -87,19 +89,33 @@ public class DsltestApplicationTests {
         Long count = query.from(customer).uniqueResult(customer.count());
         System.out.println("querydsl ==> " + count);
 	}
-	
+	/*
 	@Test
 	public void joinquery(){
 		QCustomer customer = QCustomer.customer;
 		QCompany company = QCompany.company;
 		JPAQuery query = new JPAQuery(entityManager);
 		//JPQLQuery query = null;//new HibernateQuery(session);//(entityManager);
-		List<Tuple> list = query.from(customer).innerJoin(company).on(customer.companyname.eq(company.companyname))
-	    .list(customer.firstName, customer.lastName);
+		
+		List<Tuple> list = query.from(customer).innerJoin(company)
+				.on(customer.companyname.eq(company.companyname))
+				.list(customer.firstName, customer.lastName,company.address);
+		
+		
+		System.out.println(list);
+		
+	}*/
+	@Test
+	public void joinquery2(){
+		
+		QCustomer customer = QCustomer.customer;
+		JPAQuery query = new JPAQuery(entityManager);
+		
+		List<Tuple> list = query.from(customer)
+				.list(customer.firstName, customer.lastName,customer.company.address);
 		
 		
 		System.out.println(list);
 		
 	}
-
 }

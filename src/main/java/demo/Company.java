@@ -1,32 +1,32 @@
 package demo;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Company {
 	
-	@Id
 	@Column
 	@GeneratedValue	
 	private int id;
-	
+
+
 	@Column
 	private String companyname;
 	
 	@Column
 	private String address;
-/*	
-	 @OneToMany(fetch = FetchType.LAZY, mappedBy = "companyname")
-	 private Set<Customer> customer = new HashSet<Customer>();
-*/
+	
+	 @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "company")
+	 private List<Customer> customer = new ArrayList<Customer>();
+
 
 	public Company() {
 	}
@@ -37,7 +37,10 @@ public class Company {
 		this.companyname = companyname;
 		this.address = address;
 	}
+	public Company(String companyname) {
+		this.companyname = companyname;
 
+	}
 
 
 	public int getId() {
@@ -75,17 +78,15 @@ public class Company {
 	}
 
 
-/*
-	public Set<Customer> getCustomer() {
+	public List<Customer> getCustomer() {
 		return customer;
 	}
 
 
 
-	public void setCustomer(Set<Customer> customer) {
+	public void setCustomer(List<Customer> customer) {
 		this.customer = customer;
-	}
-*/
+	}	
 	
 	
 }

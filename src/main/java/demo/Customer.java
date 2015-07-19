@@ -2,10 +2,13 @@ package demo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 @Entity
@@ -23,19 +26,23 @@ public class Customer {
 	@Column
 	private String companyname;
 	
-
-
-    @ManyToOne(optional = false)
-    private Company company;
 	
+    @Autowired
+	@ManyToOne(fetch=FetchType.LAZY,optional = false)
+    @JoinColumn(name="companyname")
+    private Company company;
+
+    
+    
+    
 	public Customer() {
 	}
 	
 	
-	public Customer(String firstName, String lastName, String companyname) {
+	public Customer(String firstName, String lastName, Company com) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.companyname = companyname;
+		this.company = com;
 	}
 
 
@@ -69,24 +76,9 @@ public class Customer {
 	}
 
 
-	public String getCompanyname() {
-		return companyname;
-	}
+	
 
 
-	public void setCompanyname(String companyname) {
-		this.companyname = companyname;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", companyname=" + companyname
-				+ "]";
-	}
-
-/*
 	public Company getCompany() {
 		return company;
 	}
@@ -95,8 +87,7 @@ public class Customer {
 	public void setCompany(Company company) {
 		this.company = company;
 	}
-*/
-	
+
 	
 
 }
